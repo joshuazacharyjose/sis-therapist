@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         let current = 0;
         const increment = numericValue / 50; // 50 steps
-        const duration = 2000; // 2 seconds
+        const duration = 650; // 0.65 seconds
         const stepTime = duration / 50;
 
         const counter = setInterval(() => {

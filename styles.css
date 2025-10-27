@@ -851,7 +851,7 @@ body {
   flex: 1 1 200px;
   text-align: center;
   padding: 2rem 1rem;
-  background: var(--white);
+  background: var(--bg-secondary);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   transition: var(--transition-base);

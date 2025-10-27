@@ -769,7 +769,7 @@ body {
 }
 
 .testimonial-card {
-  background: var(--white);
+  background: var(--bg-secondary);
   padding: 2.5rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);

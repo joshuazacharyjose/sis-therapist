@@ -57,6 +57,20 @@
   --transition-slow: 0.5s ease;
 }
 
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --border-color: #333333;
+  --light: #121212;
+  --white: #1e1e1e;
+  --dark: #e0e0e0;
+  --gray-light: #2a2a2a;
+  --gray: #b0b0b0;
+}
+
 html {
   scroll-behavior: smooth;
 }

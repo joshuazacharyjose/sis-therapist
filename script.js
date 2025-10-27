@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  
+
   // ===================================
   // 11. LAZY LOAD IMAGES (PERFORMANCE)
   // ===================================

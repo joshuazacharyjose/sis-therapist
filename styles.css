@@ -977,7 +977,7 @@ body {
   border-radius: var(--radius-sm);
   font-family: var(--font-primary);
   font-size: 1rem;
-  transition: var(--transition-base);
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   background: var(--light);
 }
 
@@ -990,9 +990,38 @@ body {
   box-shadow: 0 0 0 3px rgba(128, 178, 169, 0.1);
 }
 
+.form-group input.valid,
+.form-group select.valid,
+.form-group textarea.valid {
+  border-color: #16a34a !important;
+}
+
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+  border-color: #dc2626 !important;
+}
+
 .form-group textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+.field-error {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  min-height: 1.2rem;
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+.field-error.show-error {
+  color: #dc2626;
+}
+
+.field-error.show-success {
+  color: #16a34a;
 }
 
 .submit-btn {

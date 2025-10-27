@@ -304,6 +304,54 @@ document.addEventListener("DOMContentLoaded", () => {
     images.forEach(img => imageObserver.observe(img));
   }
 
+
+  // ===================================
+  // 13. DARK MODE TOGGLE
+  // ===================================
+  const themeToggle = document.querySelector('.theme-toggle');
+  const htmlElement = document.documentElement;
+
+  // Auto-detect system preference on load
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (prefersDark) {
+    htmlElement.setAttribute('data-theme', 'dark');
+  } else {
+    htmlElement.setAttribute('data-theme', 'light');
+  }
+
+  // Toggle theme on button click
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      htmlElement.setAttribute('data-theme', newTheme);
+    });
+  }
+
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    const newTheme = e.matches ? 'dark' : 'light';
+    htmlElement.setAttribute('data-theme', newTheme);
+  });
+
+
+  // ===================================
+  // 14. LOADING SCREEN
+  // ===================================
+  const loadingScreen = document.getElementById('loadingScreen');
+
+  if (loadingScreen) {
+    // Hide loading screen after 2.5 seconds
+    setTimeout(() => {
+      loadingScreen.classList.add('fade-out');
+
+      // Remove from DOM after fade animation completes
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 500); // Match CSS transition duration
+    }, 2500); // Show for 2.5 seconds
+  }
+
 });
 
 

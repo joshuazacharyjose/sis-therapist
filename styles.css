@@ -913,7 +913,7 @@ body {
 }
 
 .contact-card {
-  background: var(--white);
+  background: var(--bg-secondary);
   padding: 1.5rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);

@@ -124,43 +124,173 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  
+
   // ===================================
-  // 6. CONTACT FORM - REDIRECT TO GOOGLE FORMS
+  // 6. CONTACT FORM WITH VALIDATION
   // ===================================
   const contactForm = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
   const GOOGLE_FORM_URL = "https://forms.gle/a23Fe4UPjVquuAVZA";
 
+  // Get form fields and error elements
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const phoneInput = document.getElementById("phone");
+  const messageInput = document.getElementById("message");
+
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const phoneError = document.getElementById("phoneError");
+  const messageError = document.getElementById("messageError");
+
+  // Validation functions
+  function validateName(value) {
+    if (value.trim() === "") {
+      return { valid: false, message: "Name is required" };
+    }
+    if (value.trim().length < 2) {
+      return { valid: false, message: "Name must be at least 2 characters" };
+    }
+    return { valid: true, message: "Looks good!" };
+  }
+
+  function validateEmail(value) {
+    if (value.trim() === "") {
+      return { valid: false, message: "Email is required" };
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      return { valid: false, message: "Please enter a valid email address" };
+    }
+    return { valid: true, message: "Valid email" };
+  }
+
+  function validatePhone(value) {
+    // Phone is optional, so empty is valid
+    if (value.trim() === "") {
+      return { valid: true, message: "" };
+    }
+    // Remove spaces and special characters for validation
+    const cleaned = value.replace(/[\s\-\(\)]/g, "");
+    if (cleaned.length < 10) {
+      return { valid: false, message: "Phone number must be at least 10 digits" };
+    }
+    if (!/^\+?\d+$/.test(cleaned)) {
+      return { valid: false, message: "Please enter a valid phone number" };
+    }
+    return { valid: true, message: "Valid phone number" };
+  }
+
+  function validateMessage(value) {
+    if (value.trim() === "") {
+      return { valid: false, message: "Message is required" };
+    }
+    if (value.trim().length < 10) {
+      return { valid: false, message: "Message must be at least 10 characters" };
+    }
+    return { valid: true, message: "Message looks good" };
+  }
+
+  // Apply validation result to field
+  function applyValidation(input, errorElement, result) {
+    if (result.valid) {
+      input.classList.remove("invalid");
+      input.classList.add("valid");
+      errorElement.textContent = result.message;
+      errorElement.classList.remove("show-error");
+      errorElement.classList.add("show-success");
+    } else {
+      input.classList.remove("valid");
+      input.classList.add("invalid");
+      errorElement.textContent = result.message;
+      errorElement.classList.remove("show-success");
+      errorElement.classList.add("show-error");
+    }
+  }
+
+  // Clear validation state
+  function clearValidation(input, errorElement) {
+    input.classList.remove("valid", "invalid");
+    errorElement.textContent = "";
+    errorElement.classList.remove("show-error", "show-success");
+  }
+
+  // Validate individual field (for input/blur events)
+  function validateField(input, errorElement, validator) {
+    const result = validator(input.value);
+    applyValidation(input, errorElement, result);
+    return result.valid;
+  }
+
+  // Add event listeners for real-time validation
+  if (nameInput) {
+    nameInput.addEventListener("input", () => validateField(nameInput, nameError, validateName));
+    nameInput.addEventListener("blur", () => validateField(nameInput, nameError, validateName));
+  }
+
+  if (emailInput) {
+    emailInput.addEventListener("input", () => validateField(emailInput, emailError, validateEmail));
+    emailInput.addEventListener("blur", () => validateField(emailInput, emailError, validateEmail));
+  }
+
+  if (phoneInput) {
+    phoneInput.addEventListener("input", () => validateField(phoneInput, phoneError, validatePhone));
+    phoneInput.addEventListener("blur", () => validateField(phoneInput, phoneError, validatePhone));
+  }
+
+  if (messageInput) {
+    messageInput.addEventListener("input", () => validateField(messageInput, messageError, validateMessage));
+    messageInput.addEventListener("blur", () => validateField(messageInput, messageError, validateMessage));
+  }
+
+  // Form submission
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      
-      // Show loading message
-      formStatus.textContent = "Redirecting to booking form...";
-      formStatus.className = "form-status success";
-      
-      // Redirect to Google Forms after a short delay
-      setTimeout(() => {
-        window.open(GOOGLE_FORM_URL, '_blank');
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Show success message
-        formStatus.textContent = "Opening appointment form in new tab! If it doesn't open, click here.";
-        formStatus.style.cursor = "pointer";
-        
-        // Make the status message clickable
-        formStatus.addEventListener("click", () => {
+
+      // Validate all fields
+      const nameValid = validateField(nameInput, nameError, validateName);
+      const emailValid = validateField(emailInput, emailError, validateEmail);
+      const phoneValid = validateField(phoneInput, phoneError, validatePhone);
+      const messageValid = validateField(messageInput, messageError, validateMessage);
+
+      // Check if all required fields are valid
+      if (nameValid && emailValid && phoneValid && messageValid) {
+        // All valid - proceed with submission
+        formStatus.textContent = "Redirecting to booking form...";
+        formStatus.className = "form-status success";
+
+        // Redirect to Google Forms after short delay
+        setTimeout(() => {
           window.open(GOOGLE_FORM_URL, '_blank');
-        });
-        
-        // Hide message after 8 seconds
+
+          // Reset form and clear validation
+          contactForm.reset();
+          clearValidation(nameInput, nameError);
+          clearValidation(emailInput, emailError);
+          clearValidation(phoneInput, phoneError);
+          clearValidation(messageInput, messageError);
+
+          // Show success message
+          formStatus.textContent = "Opening appointment form in new tab! If it doesn't open, click here.";
+          formStatus.style.cursor = "pointer";
+          formStatus.addEventListener("click", () => {
+            window.open(GOOGLE_FORM_URL, '_blank');
+          });
+
+          // Hide message after 8 seconds
+          setTimeout(() => {
+            formStatus.style.display = "none";
+          }, 8000);
+        }, 500);
+      } else {
+        // Show error in form status
+        formStatus.textContent = "Please fix the errors above before submitting";
+        formStatus.className = "form-status error";
         setTimeout(() => {
           formStatus.style.display = "none";
-        }, 8000);
-      }, 500);
+        }, 4000);
+      }
     });
   }
 

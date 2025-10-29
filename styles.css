@@ -92,7 +92,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(127, 159, 155, 0.958)
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;

@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #8b7355;
+  --color-secondary: #d4b5a0;
+  --color-dark: #2d2d2d;
+  --color-light: #f5f5f5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  color: rgb(45, 45, 45);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+html.dark body {
+  background-color: rgb(20, 20, 20);
+  color: rgb(245, 245, 245);
+}
+
+@layer components {
+  .cta-btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+  }
+
+  .cta-primary {
+    @apply bg-amber-700 text-white hover:bg-amber-800 active:scale-95;
+  }
+
+  .cta-secondary {
+    @apply border-2 border-amber-700 text-amber-700 hover:bg-amber-50 dark:hover:bg-amber-900/20;
+  }
+
+  .section-tag {
+    @apply text-sm font-semibold text-amber-700 uppercase tracking-widest;
+  }
+}

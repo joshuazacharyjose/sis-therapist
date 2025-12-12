@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Analytics } from '@vercel/analytics/react'
+import { StatsSection } from '@/components/sections/StatsSection'
 
 export default function Home() {
   return (
@@ -7,24 +8,32 @@ export default function Home() {
       <main>
         <section
           id="home"
-          className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-amber-50 to-white dark:from-slate-900 dark:to-slate-800 overflow-hidden"
+          className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-primary/10 to-white dark:from-dark-dark dark:to-slate-900 overflow-hidden"
         >
-          <div className="absolute inset-0 opacity-20 dark:opacity-10">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-3xl"></div>
-            <div className="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute inset-0 hero-gradient"></div>
+          <div className="absolute inset-0 opacity-30 dark:opacity-20">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl animate-pulse"></div>
+            <div
+              className="absolute top-40 right-10 w-72 h-72 bg-accent rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl animate-pulse"
+              style={{ animationDelay: '1s' }}
+            ></div>
+            <div className="absolute bottom-20 left-1/2 w-64 h-64 bg-secondary rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl animate-float"></div>
           </div>
+          <div className="absolute top-10 right-20 w-20 h-20 bg-primary/30 rounded-full animate-float"></div>
+          <div className="absolute bottom-32 left-10 w-16 h-16 bg-accent/30 rounded-full animate-float-delayed-1"></div>
+          <div className="absolute top-1/3 right-10 w-12 h-12 bg-secondary/30 rounded-full animate-float-delayed-2"></div>
 
-          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fadeInUp">
             <div className="mb-8">
-              <h1 className="text-6xl md:text-7xl font-bold font-display text-slate-900 dark:text-white mb-2">
+              <h1 className="text-6xl md:text-7xl font-bold font-display text-dark dark:text-white mb-2">
                 Mindsake
               </h1>
-              <p className="text-xl text-amber-700 dark:text-amber-300 font-light italic">
+              <p className="text-xl text-accent dark:text-accent-light font-light italic">
                 ~ the mind&apos;s matters ~
               </p>
             </div>
 
-            <p className="text-xl text-slate-700 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-dark-light dark:text-slate-300 mb-8 max-w-2xl mx-auto">
               Your journey to emotional wellness starts here
             </p>
 
@@ -40,37 +49,10 @@ export default function Home() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-white dark:bg-slate-900">
-          <div className="max-w-7xl mx-auto px-4">
-            <p className="section-tag text-center mb-12">Qualifications</p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-amber-700 dark:text-amber-300 mb-2">
-                  600+
-                </div>
-                <div className="text-slate-600 dark:text-slate-300">Hours</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-amber-700 dark:text-amber-300 mb-2">
-                  2+
-                </div>
-                <div className="text-slate-600 dark:text-slate-300">Years</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-amber-700 dark:text-amber-300 mb-2">
-                  M.Sc.
-                </div>
-                <div className="text-slate-600 dark:text-slate-300">
-                  Counselling Psychology
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <StatsSection />
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-amber-200 to-transparent dark:via-amber-800"></div>
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent dark:via-primary/50"></div>
 
         {/* About Section */}
         <section id="about" className="py-20 bg-slate-50 dark:bg-slate-800">
@@ -91,7 +73,7 @@ export default function Home() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-amber-900/40 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/40 to-transparent"></div>
                 </div>
               </div>
 
@@ -149,7 +131,7 @@ export default function Home() {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-amber-200 to-transparent dark:via-amber-800"></div>
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent dark:via-primary/50"></div>
 
         {/* Services Section */}
         <section id="services" className="py-20 bg-white dark:bg-slate-900">
@@ -204,7 +186,7 @@ export default function Home() {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-amber-200 to-transparent dark:via-amber-800"></div>
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent dark:via-primary/50"></div>
 
         {/* Testimonials Section */}
         <section
@@ -245,7 +227,7 @@ export default function Home() {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-amber-200 to-transparent dark:via-amber-800"></div>
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent dark:via-primary/50"></div>
 
         {/* Process Section */}
         <section className="py-20 bg-white dark:bg-slate-900">
@@ -265,7 +247,7 @@ export default function Home() {
                   description="Free 15-minute call to discuss your needs and see if we're a good fit"
                 />
                 <div className="hidden md:flex items-center justify-center">
-                  <div className="text-3xl text-amber-700 dark:text-amber-300">
+                  <div className="text-3xl text-primary dark:text-primary-light">
                     →
                   </div>
                 </div>
@@ -275,7 +257,7 @@ export default function Home() {
                   description="Comprehensive evaluation to create your personalized treatment plan"
                 />
                 <div className="hidden md:flex items-center justify-center">
-                  <div className="text-3xl text-amber-700 dark:text-amber-300">
+                  <div className="text-3xl text-primary dark:text-primary-light">
                     →
                   </div>
                 </div>
@@ -285,7 +267,7 @@ export default function Home() {
                   description="Weekly or bi-weekly sessions tailored to your schedule and goals"
                 />
                 <div className="hidden md:flex items-center justify-center">
-                  <div className="text-3xl text-amber-700 dark:text-amber-300">
+                  <div className="text-3xl text-primary dark:text-primary-light">
                     →
                   </div>
                 </div>
@@ -300,7 +282,7 @@ export default function Home() {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-amber-200 to-transparent dark:via-amber-800"></div>
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent dark:via-primary/50"></div>
 
         {/* Contact Section */}
         <section id="contact" className="py-20 bg-slate-50 dark:bg-slate-800">
@@ -360,7 +342,7 @@ export default function Home() {
                       name="name"
                       placeholder="Your name"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-600 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-700"
+                      className="form-input"
                     />
                   </div>
 
@@ -377,7 +359,7 @@ export default function Home() {
                       name="email"
                       placeholder="your.email@example.com"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-600 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-700"
+                      className="form-input"
                     />
                   </div>
 
@@ -393,7 +375,7 @@ export default function Home() {
                       id="phone"
                       name="phone"
                       placeholder="+91 98765 43210"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-600 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-700"
+                      className="form-input"
                     />
                   </div>
 
@@ -408,7 +390,7 @@ export default function Home() {
                       id="service"
                       name="service"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-600 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-700"
+                      className="form-input"
                     >
                       <option value="">Select a service</option>
                       <option value="individual">Individual Therapy</option>
@@ -431,7 +413,7 @@ export default function Home() {
                       rows={5}
                       placeholder="Tell me a bit about what brings you here..."
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-600 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-700"
+                      className="form-input"
                     ></textarea>
                   </div>
 
@@ -547,21 +529,23 @@ function ServiceCard({
 }) {
   return (
     <div
-      className={`rounded-2xl p-8 transition-all duration-300 ${
+      className={`service-card group ${
         featured
-          ? 'bg-amber-700 text-white shadow-xl scale-105'
-          : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:shadow-lg'
+          ? 'service-card-featured bg-gradient-to-br from-primary to-primary-dark text-white scale-105'
+          : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white'
       }`}
     >
       {featured && (
-        <div className="inline-block bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
+        <div className="inline-block bg-accent text-white text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-md">
           Most Popular
         </div>
       )}
-      <div className="text-4xl mb-4">{icon}</div>
+      <div className="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:animate-bounce">
+        {icon}
+      </div>
       <h3 className="text-xl font-bold mb-3 font-display">{title}</h3>
       <p
-        className={`${featured ? 'text-amber-100' : 'text-slate-600 dark:text-slate-400'} mb-6`}
+        className={`${featured ? 'text-white/90' : 'text-slate-600 dark:text-slate-400'} mb-6`}
       >
         {description}
       </p>
@@ -570,7 +554,7 @@ function ServiceCard({
           <li
             key={feature}
             className={
-              featured ? 'text-amber-100' : 'text-slate-700 dark:text-slate-300'
+              featured ? 'text-white/90' : 'text-slate-700 dark:text-slate-300'
             }
           >
             ✓ {feature}
@@ -593,13 +577,13 @@ function TestimonialCard({
   initials: string
 }) {
   return (
-    <div className="bg-white dark:bg-slate-700 rounded-2xl p-8 shadow-lg">
-      <div className="text-4xl text-amber-700 dark:text-amber-300 mb-4">
+    <div className="testimonial-card">
+      <div className="text-4xl text-accent dark:text-accent-light mb-4 font-serif">
         &quot;
       </div>
       <p className="text-slate-700 dark:text-slate-300 mb-6 italic">{quote}</p>
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 rounded-full bg-amber-700 text-white flex items-center justify-center font-bold">
+        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center font-bold shadow-md">
           {initials}
         </div>
         <div>
@@ -609,7 +593,7 @@ function TestimonialCard({
           <p className="text-sm text-slate-600 dark:text-slate-400">{role}</p>
         </div>
       </div>
-      <div className="mt-4">⭐⭐⭐⭐⭐</div>
+      <div className="mt-4 text-accent">⭐⭐⭐⭐⭐</div>
     </div>
   )
 }
@@ -625,7 +609,7 @@ function ProcessStep({
 }) {
   return (
     <div className="text-center">
-      <div className="w-12 h-12 rounded-full bg-amber-700 text-white flex items-center justify-center font-bold text-lg mx-auto mb-4">
+      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg">
         {number}
       </div>
       <h3 className="font-bold text-slate-900 dark:text-white mb-2 font-display">
@@ -656,7 +640,7 @@ function ContactCard({
   const ContentComponent = isLink ? 'a' : 'div'
 
   return (
-    <div className="bg-white dark:bg-slate-700 rounded-2xl p-6 text-center">
+    <div className="bg-white dark:bg-slate-700 rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-300">
       <div className="text-3xl mb-3">{icon}</div>
       <h3 className="font-semibold text-slate-900 dark:text-white mb-1">
         {title}
@@ -664,7 +648,7 @@ function ContactCard({
       {isLink ? (
         <a
           href={href}
-          className="text-amber-700 dark:text-amber-300 hover:underline text-sm"
+          className="text-primary dark:text-primary-light hover:underline text-sm transition-colors"
         >
           {content}
         </a>

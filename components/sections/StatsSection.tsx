@@ -8,7 +8,7 @@ export function StatsSection() {
   const years = useCountUp(2, 650, 0, isVisible)
 
   return (
-    <section ref={ref as any} className="py-16 bg-white dark:bg-slate-900">
+    <section ref={ref as any} className="py-16 bg-white dark:bg-bg-primary">
       <div className="max-w-7xl mx-auto px-4">
         <p className="section-tag text-center mb-12">Qualifications</p>
 
@@ -17,19 +17,19 @@ export function StatsSection() {
             <div className="text-4xl font-bold text-primary dark:text-primary-light mb-2">
               {hours}+
             </div>
-            <div className="text-slate-600 dark:text-slate-300">Hours</div>
+            <div className="text-dark-light dark:text-gray-light">Hours</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-primary dark:text-primary-light mb-2">
               {years}+
             </div>
-            <div className="text-slate-600 dark:text-slate-300">Years</div>
+            <div className="text-dark-light dark:text-gray-light">Years</div>
           </div>
           <div className="text-center">
             <div className="text-2xl font-bold text-primary dark:text-primary-light mb-2">
               M.Sc.
             </div>
-            <div className="text-slate-600 dark:text-slate-300">
+            <div className="text-dark-light dark:text-gray-light">
               Counselling Psychology
             </div>
           </div>

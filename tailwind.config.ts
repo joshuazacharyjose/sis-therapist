@@ -7,29 +7,48 @@ const config: Config = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {
-      colors: {
-        primary: {
-          DEFAULT: '#80B2A9',
-          light: '#a4d4c9',
-          dark: '#5a8c82',
-        },
-        secondary: {
-          DEFAULT: '#637593',
-          light: '#8a9bb8',
-          dark: '#4a5a70',
-        },
-        accent: {
-          DEFAULT: '#E8A87C',
-          light: '#f0c5a3',
-          dark: '#d98e5f',
-        },
-        dark: {
-          DEFAULT: '#344B47',
-          light: '#4a6662',
-          dark: '#1f2e2c',
-        },
+    colors: {
+      // Mindsake Primary Colors - Sage Teal
+      primary: {
+        DEFAULT: '#80B2A9',
+        light: '#a4d4c9',
+        dark: '#5a8c82',
       },
+      // Mindsake Secondary Colors - Slate Blue
+      secondary: {
+        DEFAULT: '#637593',
+        light: '#8a9bb8',
+        dark: '#4a5a70',
+      },
+      // Mindsake Accent Color - Warm Peachy-Orange
+      accent: {
+        DEFAULT: '#E8A87C',
+        light: '#f0c5a3',
+        dark: '#d98e5f',
+      },
+      // Mindsake Dark Color - Dark Teal
+      dark: {
+        DEFAULT: '#344B47',
+        light: '#4a6662',
+        dark: '#1f2e2c',
+      },
+      // Neutral Colors
+      light: '#f9faf9',
+      white: '#ffffff',
+      gray: '#6b7280',
+      'gray-light': '#f3f4f6',
+      // Dark Mode Colors
+      'bg-primary': '#121212',
+      'bg-secondary': '#1e1e1e',
+      'text-primary': '#e0e0e0',
+      'text-secondary': '#b0b0b0',
+      'border-color': '#333333',
+      // Remove all default Tailwind colors
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: '#000000',
+    },
+    extend: {
       fontFamily: {
         display: ['Playfair Display', 'serif'],
         sans: ['Poppins', 'sans-serif'],

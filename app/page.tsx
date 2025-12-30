@@ -8,7 +8,7 @@ export default function Home() {
       <main>
         <section
           id="home"
-          className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-primary/10 to-white dark:from-dark-dark dark:to-slate-900 overflow-hidden"
+          className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-primary/10 to-white dark:from-dark-dark dark:to-bg-primary overflow-hidden"
         >
           <div className="absolute inset-0 hero-gradient"></div>
           <div className="absolute inset-0 opacity-30 dark:opacity-20">
@@ -33,7 +33,7 @@ export default function Home() {
               </p>
             </div>
 
-            <p className="text-xl text-dark-light dark:text-slate-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-dark-light dark:text-gray-light mb-8 max-w-2xl mx-auto">
               Your journey to emotional wellness starts here
             </p>
 
@@ -55,11 +55,11 @@ export default function Home() {
         <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent dark:via-primary/50"></div>
 
         {/* About Section */}
-        <section id="about" className="py-20 bg-slate-50 dark:bg-slate-800">
+        <section id="about" className="py-20 bg-gray-light dark:bg-bg-secondary">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <p className="section-tag mb-4">Get to Know</p>
-              <h2 className="text-4xl md:text-5xl font-bold font-display text-slate-900 dark:text-white">
+              <h2 className="text-4xl md:text-5xl font-bold font-display text-dark dark:text-white">
                 About Angelin
               </h2>
             </div>
@@ -78,13 +78,13 @@ export default function Home() {
               </div>
 
               <div className="space-y-6">
-                <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+                <p className="text-lg text-dark-light dark:text-gray-light leading-relaxed">
                   Angelin Thereas Jose, a licensed therapist and founder of
                   Mindsake, is dedicated to helping individuals navigate
                   life&apos;s transitions with clarity and compassion.
                 </p>
 
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                <p className="text-dark-light dark:text-gray-light leading-relaxed">
                   Her approach integrates emotional understanding, practical
                   tools, and a grounded sense of empathy to promote genuine
                   healing. With over a decade of experience, Angelin has helped
@@ -96,21 +96,21 @@ export default function Home() {
                   <div className="flex gap-4">
                     <span className="text-2xl">🎓</span>
                     <div>
-                      <h4 className="font-semibold text-slate-900 dark:text-white">
+                      <h4 className="font-semibold text-dark dark:text-white">
                         Licensed Therapist
                       </h4>
-                      <p className="text-slate-600 dark:text-slate-400">
+                      <p className="text-dark-light dark:text-gray-light">
                         Board Certified Clinical Psychologist
                       </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="text-2xl">💼</span>
-                    <div>
-                      <h4 className="font-semibold text-slate-900 dark:text-white">
+                      </div>
+                      </div>
+                      <div className="flex gap-4">
+                      <span className="text-2xl">💼</span>
+                      <div>
+                      <h4 className="font-semibold text-dark dark:text-white">
                         Specialized Training
                       </h4>
-                      <p className="text-slate-600 dark:text-slate-400">
+                      <p className="text-dark-light dark:text-gray-light">
                         CBT, DBT, Trauma-Informed Care
                       </p>
                     </div>
@@ -134,14 +134,14 @@ export default function Home() {
         <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent dark:via-primary/50"></div>
 
         {/* Services Section */}
-        <section id="services" className="py-20 bg-white dark:bg-slate-900">
+        <section id="services" className="py-20 bg-white dark:bg-bg-primary">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <p className="section-tag mb-4">What I Offer</p>
-              <h2 className="text-4xl md:text-5xl font-bold font-display text-slate-900 dark:text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold font-display text-dark dark:text-white mb-4">
                 Therapy Services
               </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+              <p className="text-lg text-dark-light dark:text-gray-light max-w-2xl mx-auto">
                 Tailored approaches to support your unique journey toward
                 emotional wellness
               </p>
@@ -191,12 +191,12 @@ export default function Home() {
         {/* Testimonials Section */}
         <section
           id="testimonials"
-          className="py-20 bg-slate-50 dark:bg-slate-800"
+          className="py-20 bg-gray-light dark:bg-bg-secondary"
         >
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <p className="section-tag mb-4">Client Stories</p>
-              <h2 className="text-4xl md:text-5xl font-bold font-display text-slate-900 dark:text-white">
+              <h2 className="text-4xl md:text-5xl font-bold font-display text-dark dark:text-white">
                 What People Say
               </h2>
             </div>
@@ -230,11 +230,11 @@ export default function Home() {
         <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent dark:via-primary/50"></div>
 
         {/* Process Section */}
-        <section className="py-20 bg-white dark:bg-slate-900">
+        <section className="py-20 bg-white dark:bg-bg-primary">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <p className="section-tag mb-4">How It Works</p>
-              <h2 className="text-4xl md:text-5xl font-bold font-display text-slate-900 dark:text-white">
+              <h2 className="text-4xl md:text-5xl font-bold font-display text-dark dark:text-white">
                 Your Journey to Wellness
               </h2>
             </div>
@@ -285,14 +285,14 @@ export default function Home() {
         <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent dark:via-primary/50"></div>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 bg-slate-50 dark:bg-slate-800">
+        <section id="contact" className="py-20 bg-gray-light dark:bg-bg-secondary">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <p className="section-tag mb-4">Let&apos;s Connect</p>
-              <h2 className="text-4xl md:text-5xl font-bold font-display text-slate-900 dark:text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold font-display text-dark dark:text-white mb-4">
                 Get in Touch
               </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400">
+              <p className="text-lg text-dark-light dark:text-gray-light">
                 Take the first step toward your healing journey
               </p>
             </div>
@@ -327,12 +327,12 @@ export default function Home() {
                 />
               </div>
 
-              <div className="bg-white dark:bg-slate-700 rounded-2xl p-8 shadow-lg">
+              <div className="bg-white dark:bg-bg-secondary rounded-2xl p-8 shadow-lg">
                 <form className="space-y-6">
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+                      className="block text-sm font-semibold text-dark dark:text-white mb-2"
                     >
                       Full Name
                     </label>
@@ -349,7 +349,7 @@ export default function Home() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+                      className="block text-sm font-semibold text-dark dark:text-white mb-2"
                     >
                       Email
                     </label>
@@ -366,7 +366,7 @@ export default function Home() {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+                      className="block text-sm font-semibold text-dark dark:text-white mb-2"
                     >
                       Phone Number
                     </label>
@@ -382,7 +382,7 @@ export default function Home() {
                   <div>
                     <label
                       htmlFor="service"
-                      className="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+                      className="block text-sm font-semibold text-dark dark:text-white mb-2"
                     >
                       Service Interested In
                     </label>
@@ -403,7 +403,7 @@ export default function Home() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-semibold text-slate-900 dark:text-white mb-2"
+                      className="block text-sm font-semibold text-dark dark:text-white mb-2"
                     >
                       Message
                     </label>
@@ -428,7 +428,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 dark:bg-black text-white py-12">
+      <footer className="bg-dark dark:bg-black text-white py-12">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
@@ -442,14 +442,14 @@ export default function Home() {
                 />
                 <span className="font-semibold">Mindsake</span>
               </div>
-              <p className="text-slate-400 text-sm">
+              <p className="text-gray-light text-sm">
                 Nurturing minds, healing hearts
               </p>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-slate-400 text-sm">
+              <ul className="space-y-2 text-gray-light text-sm">
                 <li>
                   <a href="#home" className="hover:text-white transition">
                     Home
@@ -498,11 +498,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-slate-800 pt-8">
-            <p className="text-center text-slate-400 text-sm">
+          <div className="border-t border-gray pt-8">
+            <p className="text-center text-gray-light text-sm">
               © 2025 Mindsake | Designed with care for well-being
             </p>
-            <p className="text-center text-slate-500 text-xs mt-2">
+            <p className="text-center text-gray text-xs mt-2">
               Confidential & Professional Therapy Services
             </p>
           </div>
@@ -532,7 +532,7 @@ function ServiceCard({
       className={`service-card group ${
         featured
           ? 'service-card-featured bg-gradient-to-br from-primary to-primary-dark text-white scale-105'
-          : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white'
+          : 'bg-white dark:bg-bg-secondary text-dark dark:text-white'
       }`}
     >
       {featured && (
@@ -545,7 +545,7 @@ function ServiceCard({
       </div>
       <h3 className="text-xl font-bold mb-3 font-display">{title}</h3>
       <p
-        className={`${featured ? 'text-white/90' : 'text-slate-600 dark:text-slate-400'} mb-6`}
+        className={`${featured ? 'text-white/90' : 'text-dark-light dark:text-gray-light'} mb-6`}
       >
         {description}
       </p>
@@ -554,7 +554,7 @@ function ServiceCard({
           <li
             key={feature}
             className={
-              featured ? 'text-white/90' : 'text-slate-700 dark:text-slate-300'
+              featured ? 'text-white/90' : 'text-dark dark:text-gray-light'
             }
           >
             ✓ {feature}
@@ -581,16 +581,16 @@ function TestimonialCard({
       <div className="text-4xl text-accent dark:text-accent-light mb-4 font-serif">
         &quot;
       </div>
-      <p className="text-slate-700 dark:text-slate-300 mb-6 italic">{quote}</p>
+      <p className="text-dark-light dark:text-gray-light mb-6 italic">{quote}</p>
       <div className="flex items-center gap-4">
         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center font-bold shadow-md">
           {initials}
         </div>
         <div>
-          <h4 className="font-semibold text-slate-900 dark:text-white">
+          <h4 className="font-semibold text-dark dark:text-white">
             {author}
           </h4>
-          <p className="text-sm text-slate-600 dark:text-slate-400">{role}</p>
+          <p className="text-sm text-dark-light dark:text-gray-light">{role}</p>
         </div>
       </div>
       <div className="mt-4 text-accent">⭐⭐⭐⭐⭐</div>
@@ -612,10 +612,10 @@ function ProcessStep({
       <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg">
         {number}
       </div>
-      <h3 className="font-bold text-slate-900 dark:text-white mb-2 font-display">
+      <h3 className="font-bold text-dark dark:text-white mb-2 font-display">
         {title}
       </h3>
-      <p className="text-slate-600 dark:text-slate-400 text-sm">
+      <p className="text-dark-light dark:text-gray-light text-sm">
         {description}
       </p>
     </div>
@@ -640,10 +640,10 @@ function ContactCard({
   const ContentComponent = isLink ? 'a' : 'div'
 
   return (
-    <div className="bg-white dark:bg-slate-700 rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-300">
-      <div className="text-3xl mb-3">{icon}</div>
-      <h3 className="font-semibold text-slate-900 dark:text-white mb-1">
-        {title}
+   <div className="bg-white dark:bg-bg-secondary rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-300">
+     <div className="text-3xl mb-3">{icon}</div>
+     <h3 className="font-semibold text-dark dark:text-white mb-1">
+       {title}
       </h3>
       {isLink ? (
         <a
@@ -654,11 +654,11 @@ function ContactCard({
         </a>
       ) : (
         <>
-          <p className="text-slate-700 dark:text-slate-300 text-sm font-medium">
+          <p className="text-dark-light dark:text-gray-light text-sm font-medium">
             {content}
           </p>
           {subtitle && (
-            <p className="text-slate-600 dark:text-slate-400 text-xs mt-1">
+            <p className="text-dark-light dark:text-gray-light text-xs mt-1">
               {subtitle}
             </p>
           )}
